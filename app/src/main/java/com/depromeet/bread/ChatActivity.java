@@ -1,9 +1,7 @@
 package com.depromeet.bread;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,9 +10,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class ChatActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private ListView listView;
+    private EditText inputText;
+    private Button sendBtn;
+    private ArrayList<Message> messages = new ArrayList<Message>() ;
+    private HomeAdapter homeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,14 +32,24 @@ public class ChatActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        listView = (ListView) findViewById(R.id.listView);
+        inputText = (EditText) findViewById(R.id.inputText);;
+        sendBtn = (Button) findViewById(R.id.sendBtn);
+        homeAdapter = new HomeAdapter(this, R.layout.message, messages);
+        listView.setAdapter(homeAdapter);
+
+        sendBtn.setOnClickListener( new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick( View v ){
+                String str = inputText.getText().toString();
+                messages.add(new Message(str));
+                homeAdapter.notifyDataSetChanged();
+                inputText.setText("");
             }
         });
+
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
