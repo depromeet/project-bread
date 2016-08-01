@@ -1,5 +1,6 @@
 package com.depromeet.bread;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -7,12 +8,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -22,21 +27,24 @@ public class ChatActivity extends AppCompatActivity
     private ListView listView;
     private EditText inputText;
     private Button sendBtn;
-    private ArrayList<Message> messages = new ArrayList<Message>() ;
+    private ArrayList<Message> messages = new ArrayList<>() ;
     private HomeAdapter homeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         listView = (ListView) findViewById(R.id.listView);
-        inputText = (EditText) findViewById(R.id.inputText);;
+        inputText = (EditText) findViewById(R.id.inputText);
         sendBtn = (Button) findViewById(R.id.sendBtn);
         homeAdapter = new HomeAdapter(this, R.layout.message, messages);
         listView.setAdapter(homeAdapter);
+
+
 
         sendBtn.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -45,6 +53,7 @@ public class ChatActivity extends AppCompatActivity
                 messages.add(new Message(str));
                 homeAdapter.notifyDataSetChanged();
                 inputText.setText("");
+                listView.smoothScrollToPosition(homeAdapter.getCount()-1);
             }
         });
 
@@ -59,6 +68,41 @@ public class ChatActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    public class HomeAdapter extends ArrayAdapter<Message> {
+
+        private ArrayList<Message> messages;
+
+        public HomeAdapter(Context context, int textViewResourceId, ArrayList<Message> messages) {
+            super(context, textViewResourceId, messages);
+            this.messages = messages;
+        }
+
+        @Override
+        public View getView( int position, View convertView, ViewGroup Parent) {
+
+            View v = convertView;
+            if (v == null) {
+                LayoutInflater vi = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                v = vi.inflate(R.layout.message, null);
+            }
+            Message message = messages.get(position);
+            if (message != null) {
+                TextView message_text = (TextView) v.findViewById(R.id.message_text);
+                message_text.setText(message.getItemText());
+            }
+            return v;
+        }
+
+    }
+
+    class Message {
+        private String messageText;
+
+        public Message (String messageText) { this.messageText = messageText; }
+
+        public String getItemText() { return messageText; }
     }
 
     @Override

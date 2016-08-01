@@ -6,4 +6,11 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string-array name="univ_list">
+        <item > 동국대학교 </item>
+        <item > 서울대학교 </item>
+        <item > 부산대학교 </item>
+        <item > 인천대학교 </item>
+    </string-array>
 </resources>
