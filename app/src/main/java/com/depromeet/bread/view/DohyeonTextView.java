@@ -7,8 +7,20 @@ import android.widget.TextView;
 
 public class DohyeonTextView extends TextView {
 
+    public DohyeonTextView(Context context) {
+        super(context);
+        init();
+    }
     public DohyeonTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init();
+    }
+    public DohyeonTextView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init();
+    }
+
+    public void init() {
         setTypeface(Typeface.createFromAsset(getContext().getAssets(), "BMDOHYEON.ttf"));
     }
 }
