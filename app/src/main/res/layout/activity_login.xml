@@ -9,7 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="@dimen/activity_margin_quadra"
+        android:paddingTop="@dimen/activity_margin_quadra"
+        android:paddingLeft="@dimen/activity_margin_quadra"
+        android:paddingRight="@dimen/activity_margin_quadra"
+        android:paddingBottom="@dimen/activity_margin_double"
         android:background="@color/colorPrimary" >
 
         <LinearLayout
@@ -33,14 +36,119 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="@dimen/activity_margin"
+            android:paddingRight="@dimen/activity_margin"
+            android:paddingBottom="@dimen/activity_margin"
+            android:gravity="center">
+
+            <GridLayout
+                android:id="@+id/form_login"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:background="@color/colorBackground" >
+
+                <com.depromeet.bread.view.DohyeonTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="@dimen/activity_margin"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/font_size_medium"
+                    android:text="ID." />
+
+                <EditText
+                    android:id="@+id/et_login_id"
+                    android:layout_height="@dimen/activity_view_height"
+                    android:layout_gravity="fill"
+                    android:padding="@dimen/activity_margin_half"
+                    android:inputType="textEmailAddress"
+                    android:background="@color/colorTransparent" />
+
+                <View
+                    android:layout_columnSpan="2"
+                    android:layout_height="@dimen/activity_margin_small"
+                    android:background="@color/colorPrimary" />
+
+                <com.depromeet.bread.view.DohyeonTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="@dimen/activity_margin"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/font_size_medium"
+                    android:text="Pw." />
+
+                <EditText
+                    android:id="@+id/et_login_pw"
+                    android:layout_height="@dimen/activity_view_height"
+                    android:layout_gravity="fill"
+                    android:padding="@dimen/activity_margin_half"
+                    android:inputType="textPassword"
+                    android:background="@color/colorTransparent" />
+
+            </GridLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_margin_half" />
+
+            <GridLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="1"
+                android:background="@color/colorBackground" >
+
+                <com.depromeet.bread.view.DohyeonButton
+                    android:stateListAnimator="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_view_height"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/font_size_medium"
+                    android:text="@string/login" />
+
+                <View
+                    android:layout_height="@dimen/activity_margin_small"
+                    android:background="@color/colorPrimary" />
+
+                <com.depromeet.bread.view.DohyeonButton
+                    android:stateListAnimator="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_view_height"
+                    android:background="@color/colorAccent"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/font_size_medium"
+                    android:text="@string/register" />
+
+            </GridLayout>
+
+            <com.depromeet.bread.view.HyperTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:paddingTop="@dimen/activity_margin_half"
+                android:paddingBottom="@dimen/activity_margin_half"
+                android:text="@string/forgot_id_pw"
+                android:textSize="@dimen/font_size_normal"
+                android:textColor="@drawable/selector_hyperlink" />
+
+        </LinearLayout>
+
     </RelativeLayout>
     
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_margin_quadra"
-        android:paddingTop="@dimen/activity_margin_quadra"
+        android:paddingTop="@dimen/activity_margin_triple"
         android:paddingBottom="@dimen/activity_margin_quadra"
         android:gravity="center" >
 
@@ -67,8 +175,8 @@
             <com.depromeet.bread.view.HyperTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/activity_margin"
-                android:paddingBottom="@dimen/activity_margin"
+                android:paddingTop="@dimen/activity_margin_half"
+                android:paddingBottom="@dimen/activity_margin_half"
                 android:text="@string/login_with_kakao"
                 android:textSize="@dimen/font_size_normal"
                 android:textColor="@drawable/selector_hyperlink" />
