@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">꽈배기</string>
     <string name="splash">로딩</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
+    <string name="login_with_others">다른 계정으로 로그인하기</string>
+    <string name="login_with_kakao"><u>카카오톡 로그인하기</u></string>
+    <string name="login_with_facebook"><u>페이스북 로그인하기</u></string>
 
     <string-array name="univ_list">
         <item > 동국대학교 </item>

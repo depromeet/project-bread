@@ -1,9 +1,11 @@
-package com.depromeet.bread;
+package com.depromeet.bread.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.depromeet.bread.R;
 
 public class UnivSelectActivity extends Activity {
 
