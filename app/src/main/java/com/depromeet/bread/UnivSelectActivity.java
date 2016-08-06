@@ -5,10 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-
-/**
- * Created by 권윤환 on 2016-07-27.
- */
 public class UnivSelectActivity extends Activity {
 
     ImageButton univBtn;
