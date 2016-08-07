@@ -73,9 +73,11 @@
                         android:id="@+id/et_login_id"
                         android:layout_height="@dimen/activity_view_height"
                         android:layout_gravity="fill"
-                        android:padding="@dimen/activity_margin_half"
                         android:inputType="textEmailAddress"
-                        android:background="@color/colorTransparent" />
+                        android:padding="@dimen/activity_margin_half"
+                        android:background="@color/colorTransparent"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/font_size_medium" />
 
                     <View
                         android:layout_columnSpan="2"
@@ -95,9 +97,11 @@
                         android:id="@+id/et_login_pw"
                         android:layout_height="@dimen/activity_view_height"
                         android:layout_gravity="fill"
-                        android:padding="@dimen/activity_margin_half"
                         android:inputType="textPassword"
-                        android:background="@color/colorTransparent" />
+                        android:padding="@dimen/activity_margin_half"
+                        android:background="@color/colorTransparent"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/font_size_medium"  />
 
                 </GridLayout>
 
