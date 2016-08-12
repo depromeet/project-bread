@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/font_size_title"
-            android:text="@string/univ_info" />
+            android:text="@string/private_info" />
 
     </RelativeLayout>
 
@@ -39,35 +39,68 @@
 
         <ImageButton
             android:scaleType="fitXY"
-            android:src="@drawable/select"
-            android:backgroundTint="@color/colorTransparent"
+            android:src="@drawable/profile_pic"
+            android:background="@color/colorTransparent"
             android:id="@+id/univBtn"
             android:layout_margin="@dimen/activity_margin_quadra"
             android:layout_gravity="center"
             android:layout_width="300dp"
             android:layout_height="300dp" />
 
-
-
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
             <TextView
                 android:gravity="center"
                 android:textSize="27sp"
-                android:text="동국대학교"
-                android:layout_width="match_parent"
+                android:text="@string/nickname"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_marginLeft="@dimen/activity_margin_small"
+                android:gravity="center_vertical"
+                android:text="@string/duplicate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
-
-
+        <LinearLayout
+            android:layout_marginTop="@dimen/activity_margin_small"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
             <TextView
                 android:gravity="center"
                 android:textSize="27sp"
-                android:text="경영학과"
-                android:layout_width="match_parent"
+                android:text="@string/sex"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:layout_marginLeft="@dimen/activity_margin_small"
+                    android:textSize="27sp"
+                    android:text="@string/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <RadioButton
+                    android:layout_marginLeft="@dimen/activity_margin_small"
+                    android:textSize="27sp"
+                    android:text="@string/female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </RadioGroup>
 
-
-
+        </LinearLayout>
 
 
         <com.depromeet.bread.view.DohyeonButton
@@ -79,7 +112,7 @@
             android:background="@color/colorAccent"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/font_size_large"
-            android:text="@string/select" />
+            android:text="@string/next" />
 
     </LinearLayout>
 

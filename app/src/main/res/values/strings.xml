@@ -10,6 +10,24 @@
     <string name="login_with_kakao"><u>카카오톡 로그인하기</u></string>
     <string name="login_with_facebook"><u>페이스북 로그인하기</u></string>
     <string name="forgot_id_pw"><u>아이디나 비밀번호를 잊으셨나요?</u></string>
+    <string name="select"><u>설정하기</u></string>
+    <string name="cancel"><u>취소</u></string>
+    <string name="confirm"><u>확인</u></string>
+    <string name="terms"><u>이용약관</u></string>
+    <string name="private_info_agree"><u>개인정보 수집동의</u></string>
+    <string name="agree"><u>동의하기</u></string>
+    <string name="next"><u>다음</u></string>
+    <string name="private_info"><u>개인정보설정</u></string>
+    <string name="univ_info"><u>학교정보설정</u></string>
+    <string name="nickname"><u>닉네임 :</u></string>
+    <string name="sex"><u>성별 :</u></string>
+    <string name="male"><u>남</u></string>
+    <string name="female"><u>여</u></string>
+    <string name="all_agree"><u>전체 동의하기</u></string>
+    <string name="search_univ"><u>학교 검색</u></string>
+    <string name="search_univ_hint"><u>대학명을 입력하세요</u></string>
+    <string name="search_major"><u>전공 검색</u></string>
+    <string name="duplicate"><u>중복 확인</u></string>
 
     <string-array name="univ_list">
         <item > 동국대학교 </item>

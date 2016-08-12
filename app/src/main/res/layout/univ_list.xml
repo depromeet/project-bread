@@ -1,11 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RelativeLayout
 
-    <ListView
-        android:id="@+id/univList"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="60dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:background="@drawable/bar_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <com.depromeet.bread.view.DohyeonTextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_size_title"
+            android:text="@string/search_univ" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@color/colorGrayBackground"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:paddingLeft="@dimen/activity_margin"
+            android:hint="@string/search_univ_hint"
+            android:layout_margin="@dimen/activity_margin"
+            android:background="@color/colorAccent"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+
+        <ListView
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:layout_marginRight="@dimen/activity_margin"
+            android:layout_marginLeft="@dimen/activity_margin"
+            android:id="@+id/univList"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"></ListView>
+
+        <com.depromeet.bread.view.DohyeonButton
+            android:layout_gravity="center_horizontal"
+            android:stateListAnimator="@null"
+            android:layout_marginBottom="@dimen/activity_margin_ultra"
+            android:layout_width="140dp"
+            android:layout_height="@dimen/activity_view_height"
+            android:background="@color/colorAccent"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_size_large"
+            android:text="@string/next" />
+
+
+    </LinearLayout>
+
 
 </LinearLayout>
