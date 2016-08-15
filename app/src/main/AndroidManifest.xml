@@ -12,12 +12,7 @@
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar.FullScreen"
-            android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".activity.LoginActivity"
@@ -27,13 +22,18 @@
         <activity
             android:name=".activity.UnivSelectActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait" />
+            android:theme="@style/AppTheme.NoActionBar.FullScreen"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".activity.UnivListActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme"
+            android:theme="@style/AppTheme.NoActionBar.FullScreen"
             android:screenOrientation="portrait" />
 
         <activity
