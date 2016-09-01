@@ -8,6 +8,7 @@
     <dimen name="activity_margin_quadra">32dp</dimen>
     <dimen name="activity_margin_ultra">64dp</dimen>
     <dimen name="activity_margin_half">8dp</dimen>
+    <dimen name="activity_margin_small">5dp</dimen>
     <dimen name="activity_margin_tiny">4dp</dimen>
     <dimen name="font_size_title">28sp</dimen>
     <dimen name="font_size_large">18sp</dimen>

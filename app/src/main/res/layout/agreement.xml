@@ -27,82 +27,106 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:background="@color/colorAccent"
+        android:layout_weight="1"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="0dp">
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp">
+            android:layout_height="wrap_content">
+
             <TextView
+                android:layout_marginTop="@dimen/activity_margin_small"
                 android:layout_marginLeft="@dimen/activity_margin_double"
-                android:layout_marginTop="@dimen/activity_margin"
                 android:textSize="@dimen/font_size_large"
-                android:textColor="@color/colorPrimary"
                 android:text="@string/terms"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-
             <TextView
-                android:layout_gravity=""
-                android:layout_marginLeft="@dimen/activity_margin_double"
-                android:layout_marginTop="@dimen/activity_margin"
+                android:layout_marginTop="@dimen/activity_margin_small"
                 android:textSize="@dimen/font_size_large"
-                android:textColor="@color/colorPrimary"
+                android:layout_toLeftOf="@+id/agreeBtn1"
                 android:text="@string/agree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-        </LinearLayout>
+            <RadioButton
+                android:buttonTint="@color/colorPrimary"
+                android:layout_marginRight="@dimen/activity_margin_double"
+                android:id="@+id/agreeBtn1"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
 
         <ScrollView
+            android:layout_marginRight="@dimen/activity_margin_double"
+            android:layout_marginLeft="@dimen/activity_margin_double"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            android:layout_margin="@dimen/activity_margin_double"
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="150dp"></ScrollView>
 
-
-
-
-        <LinearLayout
-            android:orientation="vertical"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp">
+            android:layout_height="wrap_content">
             <TextView
+                android:layout_marginTop="@dimen/activity_margin_small"
                 android:layout_marginLeft="@dimen/activity_margin_double"
                 android:textSize="@dimen/font_size_large"
-                android:textColor="@color/colorPrimary"
                 android:text="@string/private_info"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </LinearLayout>
-
-        <ScrollView
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:layout_margin="@dimen/activity_margin_double"
-            android:layout_width="match_parent"
-            android:layout_height="100dp" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="30dp">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
             <TextView
-                android:layout_marginLeft="@dimen/activity_margin_double"
+                android:layout_marginTop="@dimen/activity_margin_small"
                 android:textSize="@dimen/font_size_large"
-                android:textColor="@color/colorPrimary"
+                android:layout_toLeftOf="@+id/agreeBtn2"
+                android:text="@string/agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:buttonTint="@color/colorPrimary"
+                android:layout_marginRight="@dimen/activity_margin_double"
+                android:id="@+id/agreeBtn2"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <ScrollView
+
+            android:layout_marginRight="@dimen/activity_margin_double"
+            android:layout_marginLeft="@dimen/activity_margin_double"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"></ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_marginTop="@dimen/activity_margin_small"
+                android:textSize="@dimen/font_size_large"
+                android:layout_toLeftOf="@+id/agreeBtn3"
                 android:text="@string/all_agree"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-
-        </LinearLayout>
+            <RadioButton
+                android:buttonTint="@color/colorPrimary"
+                android:id="@+id/agreeBtn3"
+                android:layout_marginRight="@dimen/activity_margin_double"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -121,6 +145,7 @@
             android:layout_height="match_parent" />
 
         <com.depromeet.bread.view.DohyeonButton
+            android:id="@+id/nextBtn"
             android:layout_weight="1"
             android:textSize="28sp"
             android:textColor="@color/colorPrimary"

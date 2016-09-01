@@ -7,32 +7,40 @@
     <string name="login">로그인</string>
     <string name="register">회원가입</string>
     <string name="login_with_others">다른 계정으로 로그인하기</string>
-    <string name="login_with_kakao"><u>카카오톡 로그인하기</u></string>
-    <string name="login_with_facebook"><u>페이스북 로그인하기</u></string>
+    <string name="login_with_kakao">카카오톡 로그인하기</string>
+    <string name="login_with_facebook">페이스북 로그인하기</string>
     <string name="forgot_id_pw"><u>아이디나 비밀번호를 잊으셨나요?</u></string>
-    <string name="select"><u>설정하기</u></string>
-    <string name="cancel"><u>취소</u></string>
-    <string name="confirm"><u>확인</u></string>
-    <string name="terms"><u>이용약관</u></string>
-    <string name="private_info_agree"><u>개인정보 수집동의</u></string>
-    <string name="agree"><u>동의하기</u></string>
-    <string name="next"><u>다음</u></string>
-    <string name="private_info"><u>개인정보설정</u></string>
-    <string name="univ_info"><u>학교정보설정</u></string>
-    <string name="nickname"><u>닉네임 :</u></string>
-    <string name="sex"><u>성별 :</u></string>
-    <string name="male"><u>남</u></string>
-    <string name="female"><u>여</u></string>
-    <string name="all_agree"><u>전체 동의하기</u></string>
-    <string name="search_univ"><u>학교 검색</u></string>
-    <string name="search_univ_hint"><u>대학명을 입력하세요</u></string>
-    <string name="search_major"><u>전공 검색</u></string>
-    <string name="duplicate"><u>중복 확인</u></string>
+    <string name="select">설정하기</string>
+    <string name="cancel">취소</string>
+    <string name="confirm">확인</string>
+    <string name="terms">이용약관</string>
+    <string name="private_info_agree">개인정보 수집동의</string>
+    <string name="agree">동의하기</string>
+    <string name="next">다음</string>
+    <string name="private_info">개인정보설정</string>
+    <string name="univ_info">학교정보설정</string>
+    <string name="nickname">닉네임 :</string>
+    <string name="sex">성별 :</string>
+    <string name="male">남</string>
+    <string name="female">여</string>
+    <string name="all_agree">전체 동의하기</string>
+    <string name="search_univ">학교 검색</string>
+    <string name="search_univ_hint">대학명을 입력하세요</string>
+    <string name="search_major">전공 검색</string>
+    <string name="search_major_hint">전공을 입력하세요</string>
+    <string name="duplicate">중복 확인</string>
 
     <string-array name="univ_list">
         <item > 동국대학교 </item>
         <item > 서울대학교 </item>
         <item > 부산대학교 </item>
         <item > 인천대학교 </item>
+    </string-array>
+
+    <string-array name="major_list">
+        <item > 경영대학 </item>
+        <item > 생명과학대학 </item>
+        <item > 문과대학 </item>
+        <item > 교육대학 </item>
     </string-array>
 </resources>
