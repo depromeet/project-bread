@@ -21,6 +21,10 @@ public class AgreementActivity extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.agreement);
+
+
+
+
         final RadioButton agreeBtn1 = (RadioButton)findViewById(R.id.agreeBtn1);
         final RadioButton agreeBtn2 = (RadioButton)findViewById(R.id.agreeBtn2);
         final RadioButton agreeBtn3 = (RadioButton)findViewById(R.id.agreeBtn3);
