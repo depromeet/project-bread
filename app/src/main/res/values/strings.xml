@@ -11,6 +11,7 @@
     <string name="login_with_facebook">페이스북 로그인하기</string>
     <string name="forgot_id_pw"><u>아이디나 비밀번호를 잊으셨나요?</u></string>
     <string name="select">설정하기</string>
+    <string name="info_confirm">정보확인</string>
     <string name="cancel">취소</string>
     <string name="confirm">확인</string>
     <string name="terms">이용약관</string>
@@ -29,6 +30,7 @@
     <string name="search_major">전공 검색</string>
     <string name="search_major_hint">전공을 입력하세요</string>
     <string name="duplicate">중복 확인</string>
+    <string name="email">\@</string>
 
     <string-array name="univ_list">
         <item > 동국대학교 </item>

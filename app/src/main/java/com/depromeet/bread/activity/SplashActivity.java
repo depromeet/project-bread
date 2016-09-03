@@ -6,13 +6,14 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import com.depromeet.bread.R;
+import com.depromeet.bread.activity.SignUp.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_0splash);
 
         new Handler().postDelayed(new Runnable() {
             @Override

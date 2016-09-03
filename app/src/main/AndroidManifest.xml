@@ -12,13 +12,13 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".activity.SignUp.InfoActivity"
             android:theme="@style/AppTheme.NoActionBar.FullScreen"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:name=".activity.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar.FullScreen"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,28 +27,38 @@
         </activity>
 
         <activity
-            android:name=".activity.AgreementActivity"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen"
+            android:name=".activity.SignUp.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+
+
+        <activity
+            android:name=".activity.SignUp.AgreementActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.UnivSelectActivity"
+            android:name=".activity.SignUp.MajorList2Activity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen"
-            android:screenOrientation="portrait" >
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
 
-        </activity>
 
         <activity
-            android:name=".activity.UnivListActivity"
+            android:name=".activity.SignUp.MajorListActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.MajorListActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen"
+            android:name=".activity.SignUp.IndividualActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.SignUp.ConfirmActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
 
 
@@ -57,13 +67,6 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
-
-        <activity
-            android:name=".activity.MembershipActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
-
 
 
     </application>

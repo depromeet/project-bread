@@ -16,8 +16,9 @@
 
         <ImageButton
             android:background="@drawable/bar_back_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp" />
 
         <com.depromeet.bread.view.DohyeonTextView
             android:gravity="center"
@@ -70,6 +71,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_weight="1"
             android:layout_marginTop="@dimen/activity_margin_small"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
@@ -103,16 +105,25 @@
         </LinearLayout>
 
 
-        <com.depromeet.bread.view.DohyeonButton
-            android:layout_gravity="center_horizontal"
-            android:stateListAnimator="@null"
-            android:layout_margin="@dimen/activity_margin_ultra"
-            android:layout_width="140dp"
-            android:layout_height="@dimen/activity_view_height"
-            android:background="@color/colorAccent"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/font_size_large"
-            android:text="@string/next" />
+        <LinearLayout
+            android:background="@color/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <com.depromeet.bread.view.DohyeonButton
+                android:id="@+id/nextBtn"
+                android:textSize="28sp"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/next"
+                android:background="@color/colorAccent"
+                android:layout_margin="@dimen/activity_margin"
+                android:layout_width="180dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

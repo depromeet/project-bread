@@ -13,8 +13,9 @@
 
         <ImageButton
             android:background="@drawable/bar_back_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp" />
 
         <com.depromeet.bread.view.DohyeonTextView
             android:gravity="center"
@@ -22,7 +23,7 @@
             android:layout_height="match_parent"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/font_size_title"
-            android:text="@string/search_univ" />
+            android:text="@string/search_major" />
 
     </RelativeLayout>
 
@@ -45,22 +46,29 @@
             android:layout_marginBottom="@dimen/activity_margin"
             android:layout_marginRight="@dimen/activity_margin"
             android:layout_marginLeft="@dimen/activity_margin"
-            android:id="@+id/univList"
+            android:id="@+id/majorList"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp"></ListView>
 
-        <com.depromeet.bread.view.DohyeonButton
-            android:id="@+id/nextBtn"
-            android:layout_gravity="center_horizontal"
-            android:stateListAnimator="@null"
-            android:layout_marginBottom="@dimen/activity_margin_ultra"
-            android:layout_width="140dp"
-            android:layout_height="@dimen/activity_view_height"
-            android:background="@color/colorAccent"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/font_size_large"
-            android:text="@string/next" />
+        <LinearLayout
+            android:background="@color/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <com.depromeet.bread.view.DohyeonButton
+                android:textSize="28sp"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/next"
+                android:background="@color/colorAccent"
+                android:layout_margin="@dimen/activity_margin"
+                android:layout_width="180dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
 
 
     </LinearLayout>
