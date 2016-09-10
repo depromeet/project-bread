@@ -17,18 +17,20 @@
         android:gravity="center">
 
         <ImageButton
+
             android:background="@drawable/bar_back_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="10dp" />
 
         <com.depromeet.bread.view.DohyeonTextView
+            android:id="@+id/room"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="25dp"
-            android:text="동국대학교 경영학과" />
+            android:textSize="15dp"
+             />
 
         <ImageButton
             android:layout_width="40dp"

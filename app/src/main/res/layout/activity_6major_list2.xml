@@ -34,6 +34,7 @@
         android:layout_height="match_parent">
 
         <EditText
+            android:id="@+id/univEdit"
             android:paddingLeft="@dimen/activity_margin"
             android:hint="@string/search_univ_hint"
             android:layout_margin="@dimen/activity_margin"
@@ -59,6 +60,7 @@
             android:layout_height="70dp">
 
             <com.depromeet.bread.view.DohyeonButton
+                android:id="@+id/nextBtn6"
                 android:textSize="28sp"
                 android:textColor="@color/colorPrimary"
                 android:text="@string/next"

@@ -3,12 +3,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-
-    >
+    android:background="@color/colorGrayBackground"  >
 
     <RelativeLayout
-
+        android:background="@color/colorPrimary"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -31,101 +29,151 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_weight="1"
-        android:background="@color/colorGrayBackground"
-        android:layout_margin="@dimen/activity_margin_small"
+        android:gravity="center"
         android:orientation="vertical"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="wrap_content">
+
+
 
         <ImageButton
-            android:scaleType="fitXY"
-            android:src="@drawable/profile_pic"
-            android:background="@color/colorTransparent"
-            android:id="@+id/univBtn"
-            android:layout_margin="@dimen/activity_margin_quadra"
-            android:layout_gravity="center"
-            android:layout_width="300dp"
-            android:layout_height="300dp" />
 
-        <LinearLayout
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-            <TextView
-                android:gravity="center"
-                android:textSize="27sp"
-                android:text="@string/nickname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <EditText
-                android:layout_width="100dp"
-                android:layout_height="match_parent" />
-            <TextView
-                android:layout_marginLeft="@dimen/activity_margin_small"
-                android:gravity="center_vertical"
-                android:text="@string/duplicate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            android:layout_marginTop="@dimen/activity_margin_quadra"
+            android:background="@drawable/profile_pic"
+            android:layout_width="250dp"
+            android:layout_height="250dp" />
 
+        //닉네임, 성별, 학교학과
         <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
             android:layout_weight="1"
-            android:layout_marginTop="@dimen/activity_margin_small"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-            <TextView
-                android:gravity="center"
-                android:textSize="27sp"
-                android:text="@string/sex"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            android:layout_height="match_parent">
 
-            <RadioGroup
+            //닉네임
+            <LinearLayout
+                android:layout_margin="@dimen/activity_margin_small"
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-                <RadioButton
-                    android:layout_marginLeft="@dimen/activity_margin_small"
-                    android:textSize="27sp"
-                    android:text="@string/male"
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="300dp"
+                android:layout_height="35dp">
+
+                <TextView
+                    android:textSize="@dimen/font_size_large"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:text="닉네임"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"></TextView>
+
+                <EditText
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@android:color/transparent"
+                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" />
-                <RadioButton
-                    android:layout_marginLeft="@dimen/activity_margin_small"
-                    android:textSize="27sp"
-                    android:text="@string/female"
+
+
+
+                <Button
+                    android:background="@color/colorPrimaryDark"
+                    android:textSize="@dimen/font_size_small"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:text="중복확인"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"></Button>
+
+            </LinearLayout>
+
+            //성별
+            <LinearLayout
+                android:layout_margin="@dimen/activity_margin_small"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="300dp"
+                android:layout_height="35dp">
+                <TextView
+                    android:textSize="@dimen/font_size_large"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:text="성별"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"></TextView>
+
+                <RadioGroup
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
                     android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:buttonTint="@color/colorPrimary"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginRight="30dp"
+                        android:text="@string/male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                    <RadioButton
+                        android:buttonTint="@color/colorPrimary"
+                        android:textColor="@color/colorPrimary"
+                        android:text="@string/female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            //대학교
+            <LinearLayout
+                android:layout_margin="@dimen/activity_margin_small"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="300dp"
+                android:layout_height="35dp">
+
+                <Button
+                    android:id="@+id/univBtn7"
+                    android:textSize="@dimen/font_size_large"
+                    android:textColor="@color/colorPrimary"
+                    android:text="학교/학과 선택"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent" />
-            </RadioGroup>
 
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:background="@color/colorPrimary"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="70dp">
-
-            <com.depromeet.bread.view.DohyeonButton
-                android:id="@+id/nextBtn"
-                android:textSize="28sp"
-                android:textColor="@color/colorPrimary"
-                android:text="@string/next"
-                android:background="@color/colorAccent"
-                android:layout_margin="@dimen/activity_margin"
-                android:layout_width="180dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent" />
+            </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <com.depromeet.bread.view.DohyeonButton
+            android:id="@+id/nextBtn8"
+            android:textSize="28sp"
+            android:textColor="@color/colorPrimary"
+            android:text="가입 완료"
+            android:background="@color/colorAccent"
+            android:layout_margin="@dimen/activity_margin"
+            android:layout_width="180dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+
 
 
 
