@@ -1,81 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activity.ChatActivity"
+    tools:context=".activity.Chat.ChatActivity"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_alignParentTop="true"
-        android:background="@color/colorPrimary"
-        android:orientation="horizontal"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center">
+        android:layout_height="match_parent">
 
-        <ImageButton
-
-            android:background="@drawable/bar_back_btn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="10dp" />
-
-        <com.depromeet.bread.view.DohyeonTextView
-            android:id="@+id/room"
-            android:gravity="center"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15dp"
-             />
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_alignParentTop="true"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center">
 
-        <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="10dp"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/burger"
-             />
-    </RelativeLayout>
+                <ImageButton
 
-    <ListView
-        android:background="@color/colorGrayBackground"
-        android:id="@+id/listView"
+                    android:background="@drawable/bar_back_btn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp" />
+
+                <com.depromeet.bread.view.DohyeonTextView
+                    android:id="@+id/room"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15dp"
+                    />
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/burger"
+                    />
+            </RelativeLayout>
+
+            <ListView
+                android:background="@color/colorGrayBackground"
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Hello World!"></ListView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <Button
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30dp"
+                    android:background="@color/colorAccent"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:text="+" />
+
+                <EditText
+                    android:background="@android:color/transparent"
+                    android:id="@+id/inputText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:background="@color/colorAccent"
+                    android:id="@+id/sendBtn"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="전송" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    
+
+
+    
+
+    <FrameLayout
+        android:id="@+id/right_drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="Hello World!"></ListView>
+        android:background="@color/colorGrayBackground"
+        android:layout_gravity="end">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <Button
-            android:textColor="@color/colorPrimary"
-            android:textSize="30dp"
-            android:background="@color/colorAccent"
-            android:layout_width="50dp"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="+" />
+            android:text="right_menu"/>
 
-        <EditText
-            android:background="@android:color/transparent"
-            android:id="@+id/inputText"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-pr
-        <Button
-            android:textColor="@color/colorPrimary"
-            android:textSize="20dp"
-            android:background="@color/colorAccent"
-            android:id="@+id/sendBtn"
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:text="전송" />
+    </FrameLayout>
 
-    </LinearLayout>
-</LinearLayout>
+    
+</android.support.v4.widget.DrawerLayout>

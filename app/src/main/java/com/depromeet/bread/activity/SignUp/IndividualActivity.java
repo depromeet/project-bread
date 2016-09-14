@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.depromeet.bread.R;
-import com.depromeet.bread.activity.ChatActivity;
+import com.depromeet.bread.activity.Chat.ChatActivity;
 
 /**
  * Created by 권윤환 on 2016-09-03.
