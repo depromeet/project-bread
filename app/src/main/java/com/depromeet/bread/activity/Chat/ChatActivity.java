@@ -24,7 +24,7 @@ public class ChatActivity extends AppCompatActivity  {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_main);
-        mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        //mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
 
         listView = (ListView)findViewById(R.id.listView);
         mAdapter = new MyAdapter(this);

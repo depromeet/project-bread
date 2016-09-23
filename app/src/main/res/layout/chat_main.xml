@@ -93,19 +93,8 @@
 
     
 
-    <FrameLayout
-        android:id="@+id/right_drawer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorGrayBackground"
-        android:layout_gravity="end">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="right_menu"/>
-
-    </FrameLayout>
+    <include
+        layout="@layout/chat_drawer_layout"/>
 
     
 </android.support.v4.widget.DrawerLayout>
