@@ -1,4 +1,4 @@
-package com.depromeet.bread.activity.SignUp;
+package com.depromeet.bread.signup;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,16 +16,14 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.depromeet.bread.R;
-import com.depromeet.bread.activity.API.School;
-import com.depromeet.bread.activity.API.SchoolAPI;
+import com.depromeet.bread.common.Global;
+import com.depromeet.bread.common.repo.School;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
@@ -116,15 +114,8 @@ public class MajorListActivity extends AppCompatActivity {
         final ProgressDialog loading = ProgressDialog.show(this, "대학 목록을 가져오는 중입니다.",
                 "잠시만 기다려주세요 :-)", false, false);
 
-        //retrofit service 구현
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(ROOT_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
         //api 인터페이스 객체
-        SchoolAPI api = retrofit.create(SchoolAPI.class);
-        Call<List<School>> call = api.getSchools();
+        Call<List<School>> call = Global.bread.getSchoolList();
         call.enqueue(new Callback<List<School>>() {
             @Override
             public void onResponse(Call<List<School>> call, Response<List<School>> response) {
@@ -133,7 +124,7 @@ public class MajorListActivity extends AppCompatActivity {
 
                 String[] items = new String[Schools.size()]; //대학이름을 담을 스트링 어레이
                 for (int i = 0; i < Schools.size(); i++) {
-                    items[i] = Schools.get(i).getName().toString();
+                    items[i] = Schools.get(i).name.toString();
                 }
 
                 uAdapter = new ArrayAdapter<String>(MajorListActivity.this, android.R.layout.simple_list_item_1, items); //그냥 this가 아니라 이름 넣어주는구나

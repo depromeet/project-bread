@@ -1,4 +1,4 @@
-package com.depromeet.bread.activity;
+package com.depromeet.bread.splash;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import com.depromeet.bread.R;
-import com.depromeet.bread.activity.SignUp.LoginActivity;
+import com.depromeet.bread.activity.signup.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

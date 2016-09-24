@@ -1,4 +1,4 @@
-package com.depromeet.bread.activity.Chat;
+package com.depromeet.bread.chat;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;

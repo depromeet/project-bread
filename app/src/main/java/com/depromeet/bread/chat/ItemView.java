@@ -1,4 +1,4 @@
-package com.depromeet.bread.activity.Chat;
+package com.depromeet.bread.chat;
 
 import android.content.Context;
 import android.util.AttributeSet;

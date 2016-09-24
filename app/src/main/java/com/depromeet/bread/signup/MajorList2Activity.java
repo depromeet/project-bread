@@ -1,4 +1,4 @@
-package com.depromeet.bread.activity.SignUp;
+package com.depromeet.bread.signup;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,9 +15,6 @@ import android.widget.ListView;
 
 import com.depromeet.bread.R;
 
-/**
- * Created by 권윤환 on 2016-09-01.
- */
 public class MajorList2Activity extends AppCompatActivity {
 
     EditText univEdit;

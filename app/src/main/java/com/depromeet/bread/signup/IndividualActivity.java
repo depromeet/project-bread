@@ -1,4 +1,4 @@
-package com.depromeet.bread.activity.SignUp;
+package com.depromeet.bread.signup;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.depromeet.bread.R;
-import com.depromeet.bread.activity.Chat.ChatActivity;
+import com.depromeet.bread.chat.ChatActivity;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;

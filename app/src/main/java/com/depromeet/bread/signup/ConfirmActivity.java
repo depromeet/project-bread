@@ -1,4 +1,4 @@
-package com.depromeet.bread.activity.SignUp;
+package com.depromeet.bread.signup;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
