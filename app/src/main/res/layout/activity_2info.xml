@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:background="@drawable/bar_back_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp" />
+
+        <com.depromeet.bread.view.DohyeonTextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_size_title"
+            android:text="@string/register" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/activity_margin_small"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/colorAccent"
+                android:textSize="16dp"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:text="ID."
+                android:layout_width="70dp"
+                android:layout_height="40dp"></TextView>
+
+            <EditText
+                android:hint="영문, 숫자 이용 6~18자"
+                android:textSize="16dp"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:layout_width="230dp"
+                android:layout_height="40dp"></EditText>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginBottom="@dimen/activity_margin_small"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/colorAccent"
+                android:textSize="16dp"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:text="Pw."
+                android:layout_width="70dp"
+                android:layout_height="40dp"></TextView>
+
+            <EditText
+                android:inputType="textPassword"
+                android:hint="영문, 숫자, 특수문자 이용"
+                android:textSize="16dp"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+
+                android:layout_width="230dp"
+                android:layout_height="40dp"></EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/activity_margin_small"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/activity_margin_small"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16dp"
+                    android:gravity="center"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/email"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"></TextView>
+
+                <EditText
+                    android:hint="이메일 입력해요"
+                    android:textSize="16dp"
+                    android:gravity="center"
+                    android:background="@color/colorPrimary"
+
+                    android:layout_width="230dp"
+                    android:layout_height="40dp"></EditText>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <com.depromeet.bread.view.DohyeonButton
+            android:id="@+id/nextBtn5"
+            android:textSize="28sp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/next"
+            android:background="@color/colorAccent"
+            android:layout_margin="@dimen/activity_margin"
+            android:layout_width="180dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

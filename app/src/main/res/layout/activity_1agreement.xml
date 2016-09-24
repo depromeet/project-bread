@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:background="@drawable/bar_back_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp" />
+
+        <com.depromeet.bread.view.DohyeonTextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_size_title"
+            android:text="@string/terms" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@color/colorAccent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginTop="@dimen/activity_margin_small"
+                android:layout_marginLeft="@dimen/activity_margin_double"
+                android:textSize="@dimen/font_size_large"
+                android:text="@string/terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="@dimen/activity_margin_small"
+                android:textSize="@dimen/font_size_large"
+                android:layout_toLeftOf="@+id/agreeBtn1"
+                android:text="@string/agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:buttonTint="@color/colorPrimary"
+                android:layout_marginRight="@dimen/activity_margin_double"
+                android:id="@+id/agreeBtn1"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_marginRight="@dimen/activity_margin_double"
+            android:layout_marginLeft="@dimen/activity_margin_double"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"></ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="@dimen/activity_margin_small"
+                android:layout_marginLeft="@dimen/activity_margin_double"
+                android:textSize="@dimen/font_size_large"
+                android:text="@string/private_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="@dimen/activity_margin_small"
+                android:textSize="@dimen/font_size_large"
+                android:layout_toLeftOf="@+id/agreeBtn2"
+                android:text="@string/agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:buttonTint="@color/colorPrimary"
+                android:layout_marginRight="@dimen/activity_margin_double"
+                android:id="@+id/agreeBtn2"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <ScrollView
+
+            android:layout_marginRight="@dimen/activity_margin_double"
+            android:layout_marginLeft="@dimen/activity_margin_double"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"></ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_marginTop="@dimen/activity_margin_small"
+                android:textSize="@dimen/font_size_large"
+                android:layout_toLeftOf="@+id/agreeBtn3"
+                android:text="@string/all_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:buttonTint="@color/colorPrimary"
+                android:id="@+id/agreeBtn3"
+                android:layout_marginRight="@dimen/activity_margin_double"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <com.depromeet.bread.view.DohyeonButton
+            android:textSize="28sp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/cancel"
+            android:background="@color/colorAccent"
+            android:layout_margin="@dimen/activity_margin"
+            android:layout_width="180dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <com.depromeet.bread.view.DohyeonButton
+            android:id="@+id/nextBtn"
+            android:layout_weight="1"
+            android:textSize="28sp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/confirm"
+            android:background="@color/colorAccent"
+            android:layout_margin="@dimen/activity_margin"
+            android:layout_width="180dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

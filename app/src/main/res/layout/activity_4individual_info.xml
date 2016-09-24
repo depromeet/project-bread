@@ -38,7 +38,7 @@
 
 
         <ImageButton
-
+            android:id="@+id/add_profile_pic"
             android:layout_marginTop="@dimen/activity_margin_quadra"
             android:background="@drawable/profile_pic"
             android:layout_width="250dp"
