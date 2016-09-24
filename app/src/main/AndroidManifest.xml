@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name=".activity.signup.InfoActivity"
+            android:name=".signup.InfoActivity"
             android:theme="@style/AppTheme.NoActionBar.FullScreen"
             android:screenOrientation="portrait" />
 
@@ -28,19 +28,19 @@
         </activity>
 
         <activity
-            android:name=".activity.signup.LoginActivity"
+            android:name=".signup.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
 
 
 
         <activity
-            android:name=".activity.signup.AgreementActivity"
+            android:name=".signup.AgreementActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.signup.MajorList2Activity"
+            android:name=".signup.MajorList2Activity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" >
@@ -50,7 +50,7 @@
 
 
         <activity
-            android:name=".activity.signup.MajorListActivity"
+            android:name=".signup.MajorListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" >
@@ -60,7 +60,7 @@
 
 
         <activity
-            android:name=".activity.signup.IndividualActivity"
+            android:name=".signup.IndividualActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
 
@@ -68,7 +68,7 @@
         </activity>
 
         <activity
-            android:name=".activity.signup.ConfirmActivity"
+            android:name=".signup.ConfirmActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
 
