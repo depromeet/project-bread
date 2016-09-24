@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                 String email = etLoginId.getText().toString();
                 String passwd = etLoginPw.getText().toString();
                 LoginModule loginModule = new LoginModule(LoginActivity.this);
-                loginModule.tryLogin(email, passwd);
+                loginModule.tryLogin(email, passwd, false);
             }
         });
     }

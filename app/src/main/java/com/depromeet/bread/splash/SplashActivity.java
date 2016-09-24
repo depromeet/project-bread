@@ -31,7 +31,7 @@ public class SplashActivity extends AppCompatActivity {
                     finish();
                 } else {
                     LoginModule loginModule = new LoginModule(SplashActivity.this);
-                    loginModule.tryLogin(email, passwd);
+                    loginModule.tryLogin(email, passwd, true);
                 }
             }
         }, 2000);

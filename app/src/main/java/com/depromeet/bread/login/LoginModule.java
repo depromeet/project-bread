@@ -34,7 +34,7 @@ public class LoginModule {
         sharedEdit = sharedPref.edit();
     }
 
-    public void tryLogin(final String email, final String passwd) {
+    public void tryLogin(final String email, final String passwd, final boolean intent) {
         loading.show();
 
         Call<Member> call = Global.bread.login(email, passwd);
@@ -52,11 +52,13 @@ public class LoginModule {
                 }
                 // 로그인 실패시 로컬정보 삭제 후 로그인 화면으로 이동
                 else {
-                    sharedEdit.clear();
-                    sharedEdit.apply();
-                    activity.startActivity(new Intent(activity, LoginActivity.class));
-                    activity.finish();
                     Toast.makeText(activity, R.string.invalid_param, Toast.LENGTH_SHORT).show();
+                    if (intent) {
+                        sharedEdit.clear();
+                        sharedEdit.apply();
+                        activity.startActivity(new Intent(activity, LoginActivity.class));
+                        activity.finish();
+                    }
                 }
                 loading.dismiss();
             }
