@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "116580504613",
+    "firebase_url": "https://bread-75bfc.firebaseio.com",
+    "project_id": "bread-75bfc",
+    "storage_bucket": "bread-75bfc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116580504613:android:082ac50566cb8aa0",
+        "android_client_info": {
+          "package_name": "com.depromeet.bread"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "116580504613-ophfl71b4e1dajp6vi6fqmp0g8cjlgma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK3q5xBuh2dLfPWV_T0_IGrg1cpIXzEsg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
