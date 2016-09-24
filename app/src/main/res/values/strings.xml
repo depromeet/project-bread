@@ -31,6 +31,9 @@
     <string name="search_major_hint">전공을 입력하세요</string>
     <string name="duplicate">중복 확인</string>
     <string name="email">\@</string>
+    <string name="conn_fail">네트워크 상태를 확인 후 다시 시도해주세요.</string>
+    <string name="invalid_param">정확한 정보를 입력 후 다시 시도해주세요.</string>
+    <string name="please_wait">잠시만 기다려주세요.</string>
 
     <string-array name="univ_list">
         <item > 동국대학교 </item>
