@@ -11,5 +11,6 @@ public class Member {
     public String crid;
     public String name;
     public String sex;
+    public String room_name;
 
 }

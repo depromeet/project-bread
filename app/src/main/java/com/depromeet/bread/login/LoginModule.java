@@ -19,10 +19,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginModule {
-    public Activity activity;
-    public ProgressDialog loading;
-    public SharedPreferences sharedPref;
-    public SharedPreferences.Editor sharedEdit;
+    Activity activity;
+    ProgressDialog loading;
+    SharedPreferences sharedPref;
+    SharedPreferences.Editor sharedEdit;
+    String roomName;
 
     public LoginModule(Activity activity) {
         this.activity = activity;
@@ -32,6 +33,7 @@ public class LoginModule {
         loading.setCancelable(false);
         sharedPref = activity.getSharedPreferences("USER", Context.MODE_PRIVATE);
         sharedEdit = sharedPref.edit();
+        roomName = "";
     }
 
     public void tryLogin(final String email, final String passwd, final boolean intent) {
@@ -46,9 +48,10 @@ public class LoginModule {
                 // 로그인 성공시 디바이스 토큰 등록
                 if (member.result == 1) {
                     String token = FirebaseInstanceId.getInstance().getToken();
-                    updateDeviceToken(member.uid, token);
+                    updateDeviceToken(member.uid, token, intent);
                     sharedEdit.putString("ID", email);
                     sharedEdit.putString("PW", passwd);
+                    roomName = member.room_name;
                 }
                 // 로그인 실패시 로컬정보 삭제 후 로그인 화면으로 이동
                 else {
@@ -70,7 +73,7 @@ public class LoginModule {
         });
     }
 
-    private void updateDeviceToken(final String uid, final String token) {
+    private void updateDeviceToken(final String uid, final String token, final boolean intent) {
 
         Call<Success> call = Global.bread.updateDeviceToken(uid, token);
         call.enqueue(new Callback<Success>() {
@@ -81,15 +84,19 @@ public class LoginModule {
                 // 토큰 등록 성공시 채팅창으로 이동
                 if (body.result == 1) {
                     sharedEdit.apply();
-                    activity.startActivity(new Intent(activity, ChatActivity.class));
+                    Intent loginIntent = new Intent(activity, ChatActivity.class);
+                    loginIntent.putExtra("roomName", roomName);
+                    activity.startActivity(loginIntent);
                     activity.finish();
                 }
                 // 토큰 등록 실패시 로그인 화면으로 이동
                 else {
                     Toast.makeText(activity, R.string.invalid_param, Toast.LENGTH_SHORT).show();
                     loading.dismiss();
-                    activity.startActivity(new Intent(activity, LoginActivity.class));
-                    activity.finish();
+                    if (intent) {
+                        activity.startActivity(new Intent(activity, LoginActivity.class));
+                        activity.finish();
+                    }
                 }
                 loading.dismiss();
             }

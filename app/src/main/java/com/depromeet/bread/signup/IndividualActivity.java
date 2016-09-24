@@ -94,6 +94,7 @@ public class IndividualActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재 화면의 제어권자
                         ChatActivity.class); // 다음 넘어갈 클래스 지정
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("roomName",univBtn7.getText().toString());
                 startActivity(intent); // 다음 화면으로 넘어간다
 
