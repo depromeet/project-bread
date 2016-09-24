@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.ImageButton;
 
 import com.depromeet.bread.R;
 
@@ -23,12 +23,20 @@ public class InfoActivity extends AppCompatActivity {
 
         Button nextBtn = (Button)findViewById(R.id.nextBtn5);
 
+        //뒤로가기
+        ImageButton backOfInfo = (ImageButton)findViewById(R.id.backOfInfo);
+        backOfInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                finish();
+            }
+        });
+
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Toast.makeText(getApplicationContext(), "가입이 완료되었습니다.",Toast.LENGTH_SHORT ).show();
 
                 Intent intent = new Intent(
                             getApplicationContext(), // 현재 화면의 제어권자

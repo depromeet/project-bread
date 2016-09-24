@@ -2,7 +2,6 @@ package com.depromeet.bread.signup;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -14,11 +13,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.depromeet.bread.R;
 import com.depromeet.bread.common.Global;
 import com.depromeet.bread.common.repo.School;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -33,6 +34,8 @@ public class MajorListActivity extends AppCompatActivity {
     EditText univEdit;
     ListView majorList;
     ArrayAdapter<String> uAdapter;
+    ArrayList<String> arrUid;
+    ArrayList<String> arrName;
     private List<School> Schools; //data model 저장할 리스트
     //API 통신
     public static final String ROOT_URL = "http://inirin.com/";
@@ -44,26 +47,25 @@ public class MajorListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_5major_list);
 
+        arrUid = new ArrayList<>();
+        arrName = new ArrayList<>();
+
         //데이터를 보여줄 ListView
         majorList = (ListView) findViewById(R.id.majorList);
         getSchools(); //calling method that will fetch data
+        final Intent intent = new Intent(getApplicationContext(), MajorList2Activity.class);
 
-
-        //HARD CODING
-        /*String products[] = { "동국대학교", "서울대학교", "연세대학교", "상명대학교", "광운대학교",
-                "고려대학교", "홍익대학교", "울산대학교", "이화여자대학교", "Dongguk university",
-                "Seoul university", "Hongik university", "Yonsei University"};
-
-        univEdit = (EditText) findViewById(R.id.univEdit);
-
-        uAdapter = new ArrayAdapter<>(this, R.layout.univ_list_item,R.id.item_name,products);
-        majorList.setAdapter(uAdapter);*/
 
         //누르면 EDITTEXT로
         majorList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                univEdit.setText((String) majorList.getAdapter().getItem(position));
+                univEdit.setText(arrName.get(position));
+                Toast.makeText(getApplicationContext(), arrUid.get(position), Toast.LENGTH_SHORT).show();
+
+                //uid를 학과 액티비티를 넘긴다.
+                intent.putExtra("uid",arrUid.get(position).toString());
+                intent.putExtra("uName",(String) majorList.getAdapter().getItem(position));
             }
         });
 
@@ -92,22 +94,14 @@ public class MajorListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                savePreferences();
-                Intent intent = new Intent(
-                        getApplicationContext(), // 현재 화면의 제어권자
-                        MajorList2Activity.class); // 다음 넘어갈 클래스 지정
                 startActivity(intent); // 다음 화면으로 넘어간다
+                finish();
             }
         });
 
 
     }
-    private void savePreferences() {
-        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
-        SharedPreferences.Editor editor = pref.edit();
-        editor.putString("univ", univEdit.getText().toString());
-        editor.commit();
-    }
+
 
     public void getSchools() {
 
@@ -122,12 +116,12 @@ public class MajorListActivity extends AppCompatActivity {
                 loading.dismiss(); //로딩바죽이기
                 Schools = response.body(); // 뭐지? 데이터를 저장한다.
 
-                String[] items = new String[Schools.size()]; //대학이름을 담을 스트링 어레이
                 for (int i = 0; i < Schools.size(); i++) {
-                    items[i] = Schools.get(i).name.toString();
+                    arrUid.add(Schools.get(i).uid);
+                    arrName.add(Schools.get(i).name);
                 }
 
-                uAdapter = new ArrayAdapter<String>(MajorListActivity.this, android.R.layout.simple_list_item_1, items); //그냥 this가 아니라 이름 넣어주는구나
+                uAdapter = new ArrayAdapter<String>(MajorListActivity.this, android.R.layout.simple_list_item_1, arrName); //그냥 this가 아니라 이름 넣어주는구나
 
                 majorList.setAdapter(uAdapter);
             }

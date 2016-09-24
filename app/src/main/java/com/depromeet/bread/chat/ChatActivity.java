@@ -1,6 +1,6 @@
 package com.depromeet.bread.chat;
 
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +18,7 @@ public class ChatActivity extends AppCompatActivity  {
     MyAdapter mAdapter;
     EditText inputText;
     DrawerLayout mDrawerLayout;
+    TextView room;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,12 @@ public class ChatActivity extends AppCompatActivity  {
         listView = (ListView)findViewById(R.id.listView);
         mAdapter = new MyAdapter(this);
         listView.setAdapter(mAdapter);
+
+        //채팅방명 설정
+        Intent intent = getIntent();
+        String roomName = intent.getExtras().getString("roomName");
+        room = (TextView)findViewById(R.id.room);
+        room.setText(roomName);
 
         //메시지보내기
         inputText = (EditText)findViewById(R.id.inputText);
@@ -46,12 +53,7 @@ public class ChatActivity extends AppCompatActivity  {
             }
         });
 
-        //채팅방명 설정
-        TextView room = (TextView)findViewById(R.id.room);
-        SharedPreferences sf = getSharedPreferences("pref", 0);
-        String univ = sf.getString("univ", "");
-        String major = sf.getString("major", "");
-        room.setText(univ + " " + major);
+
 
 
 

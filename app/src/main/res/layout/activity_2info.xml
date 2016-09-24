@@ -13,6 +13,7 @@
         android:gravity="center">
 
         <ImageButton
+            android:id="@+id/backOfInfo"
             android:background="@drawable/bar_back_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -41,15 +42,15 @@
 
             <TextView
                 android:textColor="@color/colorAccent"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:gravity="center"
                 android:background="@color/colorPrimary"
-                android:text="ID."
+                android:text="\@."
                 android:layout_width="70dp"
                 android:layout_height="40dp"></TextView>
 
             <EditText
-                android:hint="영문, 숫자 이용 6~18자"
+                android:hint="이메일을 입력하세요"
                 android:textSize="16dp"
                 android:gravity="center"
                 android:background="@color/colorPrimary"
@@ -65,7 +66,7 @@
 
             <TextView
                 android:textColor="@color/colorAccent"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:gravity="center"
                 android:background="@color/colorPrimary"
                 android:text="Pw."
@@ -96,23 +97,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:textColor="@color/colorAccent"
-                    android:textSize="16dp"
-                    android:gravity="center"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/email"
-                    android:layout_width="70dp"
-                    android:layout_height="40dp"></TextView>
-
-                <EditText
-                    android:hint="이메일 입력해요"
-                    android:textSize="16dp"
-                    android:gravity="center"
-                    android:background="@color/colorPrimary"
-
-                    android:layout_width="230dp"
-                    android:layout_height="40dp"></EditText>
 
             </LinearLayout>
 
