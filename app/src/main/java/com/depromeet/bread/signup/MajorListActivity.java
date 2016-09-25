@@ -33,14 +33,13 @@ import retrofit2.Response;
 public class MajorListActivity extends AppCompatActivity {
     EditText univEdit;
     ListView majorList;
-    ArrayAdapter<String> uAdapter;
+    ArrayAdapter<String> adapter;
     ArrayList<String> arrUid;
     ArrayList<String> arrName;
-    private List<School> Schools; //data model 저장할 리스트
-    //API 통신
-    public static final String ROOT_URL = "http://inirin.com/";
-    public static final String KEY_UID = "key_u_id";
-    public static final String KEY_UNAME = "key_u_name";
+    ArrayList<String> filteredUid;
+    ArrayList<String> filteredName;
+    List<School> Schools;
+    String selectedUid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +48,14 @@ public class MajorListActivity extends AppCompatActivity {
 
         arrUid = new ArrayList<>();
         arrName = new ArrayList<>();
+        filteredUid = new ArrayList<>();
+        filteredName = new ArrayList<>();
+        selectedUid = "";
 
         //데이터를 보여줄 ListView
         majorList = (ListView) findViewById(R.id.majorList);
-        getSchools(); //calling method that will fetch data
+        getSchools();
+
         final Intent intent = new Intent(getApplicationContext(), MajorList2Activity.class);
 
 
@@ -60,12 +63,14 @@ public class MajorListActivity extends AppCompatActivity {
         majorList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                univEdit.setText(arrName.get(position));
-                Toast.makeText(getApplicationContext(), arrUid.get(position), Toast.LENGTH_SHORT).show();
+                String itemUid = filteredUid.get(position);
+                String itemName = filteredName.get(position);
 
-                //uid를 학과 액티비티에 넘긴다.
-                intent.putExtra("uid",arrUid.get(position).toString());
-                intent.putExtra("uName",(String) majorList.getAdapter().getItem(position));
+                //uid를 학과 액티비티를 넘긴다.
+                selectedUid = itemUid;
+                intent.putExtra("uid", itemUid);
+                intent.putExtra("uName", itemName);
+                univEdit.setText(itemName);
             }
         });
 
@@ -79,7 +84,15 @@ public class MajorListActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence cs, int i, int i1, int i2) {
-                MajorListActivity.this.uAdapter.getFilter().filter(cs);
+                filteredUid.clear();
+                filteredName.clear();
+                for (int c=0; c<arrUid.size(); c++) {
+                    if (arrName.get(c).replace(" ", "").contains(cs.toString().replace(" ", ""))) {
+                        filteredUid.add(arrUid.get(c));
+                        filteredName.add(arrName.get(c));
+                    }
+                }
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -88,28 +101,18 @@ public class MajorListActivity extends AppCompatActivity {
             }
         });
 
-        //다음 화면으로 넘어간다
+        // 다음 화면으로 넘어간다
         Button nextBtn2 = (Button)findViewById(R.id.nextBtn2);
         nextBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if(univEdit.getText().toString().matches("")) {
-
-                    Toast.makeText(getApplicationContext(),"학교를 선택해주세요",Toast.LENGTH_SHORT).show();
-
-                }else{
-
+                if (!selectedUid.isEmpty()) {
                     startActivity(intent); // 다음 화면으로 넘어간다
                     finish();
-
-
                 }
-
+                else Toast.makeText(getApplicationContext(),R.string.invalid_param, Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 
 
@@ -130,10 +133,11 @@ public class MajorListActivity extends AppCompatActivity {
                     arrUid.add(Schools.get(i).uid);
                     arrName.add(Schools.get(i).name);
                 }
+                filteredUid.addAll(arrUid);
+                filteredName.addAll(arrName);
 
-                uAdapter = new ArrayAdapter<String>(MajorListActivity.this, android.R.layout.simple_list_item_1, arrName); //그냥 this가 아니라 이름 넣어주는구나
-
-                majorList.setAdapter(uAdapter);
+                adapter = new ArrayAdapter<>(MajorListActivity.this, android.R.layout.simple_list_item_1, filteredName);
+                majorList.setAdapter(adapter);
             }
             @Override
             public void onFailure(Call<List<School>> call, Throwable t) {
