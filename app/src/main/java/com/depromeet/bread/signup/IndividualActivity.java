@@ -31,6 +31,14 @@ public class IndividualActivity extends AppCompatActivity {
     private final int SELECT_PHOTO = 1;
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SharedPreferences pref = getSharedPreferences("pref", 0);
+        pref.edit().clear().commit();
+
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         SharedPreferences pref = getSharedPreferences("pref", 0);

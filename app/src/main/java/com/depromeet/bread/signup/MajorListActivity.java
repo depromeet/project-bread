@@ -63,7 +63,7 @@ public class MajorListActivity extends AppCompatActivity {
                 univEdit.setText(arrName.get(position));
                 Toast.makeText(getApplicationContext(), arrUid.get(position), Toast.LENGTH_SHORT).show();
 
-                //uid를 학과 액티비티를 넘긴다.
+                //uid를 학과 액티비티에 넘긴다.
                 intent.putExtra("uid",arrUid.get(position).toString());
                 intent.putExtra("uName",(String) majorList.getAdapter().getItem(position));
             }
@@ -88,14 +88,22 @@ public class MajorListActivity extends AppCompatActivity {
             }
         });
 
-
+        //다음 화면으로 넘어간다
         Button nextBtn2 = (Button)findViewById(R.id.nextBtn2);
         nextBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                startActivity(intent); // 다음 화면으로 넘어간다
-                finish();
+                if(univEdit.getText().toString()!=null || univEdit.getText().toString()!="") {
+
+                    startActivity(intent); // 다음 화면으로 넘어간다
+                    finish();
+                }else{
+
+                    Toast.makeText(getApplicationContext(),"학교를 선택해주세요",Toast.LENGTH_SHORT).show();
+
+                }
+
             }
         });
 

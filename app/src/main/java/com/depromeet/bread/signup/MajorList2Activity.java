@@ -50,13 +50,8 @@ public class MajorList2Activity extends AppCompatActivity {
         //intent받고 학과 받아오기
         final Intent intent = getIntent();
 
-        String uid_from_school = intent.getExtras().getString("uid");
+        String uid_from_school = intent.getStringExtra("uid");
         getMajorList( uid_from_school);
-
-        //shared에 학교, 학과 저장 ( 학교id, 학교이름, 학과id, 학과이름
-
-
-
 
 
 
