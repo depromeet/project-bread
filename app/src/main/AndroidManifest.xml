@@ -52,6 +52,7 @@
         </activity>
 
         <activity
+            android:windowSoftInputMode="adjustPan"
             android:name=".signup.IndividualActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
@@ -60,6 +61,8 @@
         <activity
             android:name=".chat.ChatActivity"
             android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize"
+
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
 
