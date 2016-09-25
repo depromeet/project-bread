@@ -94,13 +94,15 @@ public class MajorListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(univEdit.getText().toString()!=null || univEdit.getText().toString()!="") {
+                if(univEdit.getText().toString().matches("")) {
+
+                    Toast.makeText(getApplicationContext(),"학교를 선택해주세요",Toast.LENGTH_SHORT).show();
+
+                }else{
 
                     startActivity(intent); // 다음 화면으로 넘어간다
                     finish();
-                }else{
 
-                    Toast.makeText(getApplicationContext(),"학교를 선택해주세요",Toast.LENGTH_SHORT).show();
 
                 }
 

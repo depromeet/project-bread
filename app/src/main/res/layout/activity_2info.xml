@@ -50,6 +50,7 @@
                 android:layout_height="40dp"></TextView>
 
             <EditText
+                android:id="@+id/email_edit"
                 android:hint="이메일을 입력하세요"
                 android:textSize="16dp"
                 android:gravity="center"
@@ -74,6 +75,7 @@
                 android:layout_height="40dp"></TextView>
 
             <EditText
+                android:id="@+id/pw_edit"
                 android:inputType="textPassword"
                 android:hint="영문, 숫자, 특수문자 이용"
                 android:textSize="16dp"

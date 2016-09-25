@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.depromeet.bread.R;
 import com.depromeet.bread.common.Global;
@@ -92,14 +93,21 @@ public class MajorList2Activity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //
-                SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
-                SharedPreferences.Editor editor = pref.edit();
 
-                editor.putString("uid",intent.getExtras().getString("uid") );
-                editor.putString("univName", intent.getExtras().getString("uName"));
-                editor.putString("majorName", Schools.get(pos).name );
-                editor.commit();
-                finish();// 다음 화면으로 넘어간다
+                if(univEdit.getText().toString().matches("")) {
+
+                    Toast.makeText(getApplicationContext(),"학과를 선택해주세요",Toast.LENGTH_SHORT).show();
+
+                }else {
+                    SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = pref.edit();
+
+                    editor.putString("uid", intent.getExtras().getString("uid"));
+                    editor.putString("univName", intent.getExtras().getString("uName"));
+                    editor.putString("majorName", Schools.get(pos).name);
+                    editor.commit();
+                    finish();// 다음 화면으로 넘어간다
+                }
             }
 
         });
